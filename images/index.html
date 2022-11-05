@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio 1st attempt</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/061a001bf0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="header">
+     <div class="container">
+        <nav>
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skill</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fas fa-solid fa-square-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fas fa-solid fa-bars " onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+            <p>Aspiring Software Developer</p>
+            <h1>Hi, i'm <span>Anandkrishna V</span></h1>
+        </div>
+     </div>
+</div> 
+<!--------------about------------->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images1/Samurai.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>Hi! Myself Anandkrishna V , I  am from Thrissur,Kerala, Currently doing B.tech CSE-AIML
+                    second year.I am a person who is positive about every aspects of life. There are many
+                    things i like to do,to see,and experience. 
+                </p>
+            </div>
+        </div>
+    </div> 
+</div> 
+<!----------skills----------------------->
+<div id="skills">
+    <div class="container">
+        <h1 class="sub-title">Skill</h1>
+        <div class="skill-list">
+            <div>
+                <i class="fa-brands fa-square-js"></i>
+                 <h2>javascript</h2>
+                 <p>Completed javascript course from udemy</p>
+            </div>
+            <div>
+                <i class="fa-brands fa-html5"></i>
+                <h2>HTML</h2>
+                <p>Completed learning html</p>
+           </div>
+           <div>
+               <i class="fa-brands fa-css3-alt"></i>
+                <h2>CSS</h2>
+                <p>Completed basic javascript</p>
+           </div>
+            <div>
+                <i class="fa-brands fa-python"></i>
+                <h2>Python</h2>
+                <p>Completed basic python</p>
+            </div>
+            <div>
+                <i class="fa-solid fa-code"></i>
+                <h2>C++</h2>
+                <p>Completed C++ course from udemy</p>
+           </div>
+        </div>
+    </div>
+</div> 
+<!--------------------Portfolio--------------------->
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My work</h1> 
+        <div class="work-list">
+            <div class="work">
+                <img src="images1/phone.jpg">
+                <div class="layer">
+                 <h3>To Be Updated</h3>
+                 <p>No work done as of now.To be updated soon</p>  
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>
+<!-------------Contact---------------->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p> <i class="fa-sharp fa-solid fa-paper-plane"></i>anand16042002@gmail.com</p>
+                <p><i class="fa-solid fa-phone"></i>9188782662</p>
+                <div class="social-icons">
+                    <a href=""><i class="fa-brands fa-instagram"></i></a>
+                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                    <a href=""><i class="fa-brands fa-github"></i></a>
+                </div>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your email" required>
+                    <textarea name=" Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn">Submit</button>    
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">Made by Anandkrishna V <i class="fa-solid fa-sword"></i></div>
+</div> 
+<script>
+    var sidemeu = document.getElementById("sidemenu");
+    function openmenu() {
+            sidemeu.classList.add("show_menu");
+            sidemeu.classList.remove("hide_menu");
+           }
+           function closemenu() {
+            sidemeu.classList.add("hide_menu");
+            sidemeu.classList.remove("show_menu");
+           }
+</script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbxynYZbXpAb833q7CE2lHHTS1-v51Odkq881uZY-5iYudzxK5pxcKgzZ3rYKyWNj0kc/exec'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+</body>
+</html>
